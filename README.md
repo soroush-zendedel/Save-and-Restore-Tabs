@@ -32,8 +32,8 @@ Firefox release builds require Mozilla-signed add-ons. To create an unlisted sig
 
 1. Create or sign in to an account at the [AMO Developer Hub](https://addons.mozilla.org/developers/).
 2. Submit a new add-on and upload a ZIP containing the extension files. Do not include `.git`, documentation-only files, or unrelated development files in the submitted package. The manifest's `browser_specific_settings.gecko.id` is the add-on's permanent ID; keep it unchanged for future updates.
-3. Choose **Distribution by me** (unlisted) when asked about distribution. Review the validation results and complete the submission.
-4. Download the signed `.xpi` from the Developer Hub. Install it through `about:addons` → gear menu → **Install Add-on From File…**.
+3. Choose **On your own** / self-distribution (unlisted), because this repository's manifest includes a self-hosted `update_url`. Do **not** choose **On this site** for this package: Mozilla-hosted submissions reject `browser_specific_settings.gecko.update_url`.
+4. Review the validation results and complete the submission, then download the signed `.xpi` from the Developer Hub. Install it through `about:addons` → gear menu → **Install Add-on From File…**.
 
 ### Automatic updates for self-distributed installs
 
@@ -41,7 +41,7 @@ This repository provides an update manifest at [`updates.json`](updates.json), a
 
 The update manifest and its download URL are part of the installed add-on's update mechanism. If the repository or release URL changes, update the manifest and keep the existing update-manifest URL available for already-installed copies.
 
-For a public listing, select the public distribution option and complete the AMO listing and review requirements. See Mozilla's [signing and distribution guide](https://extensionworkshop.com/documentation/publish/signing-and-distribution-overview/) and [submission guide](https://extensionworkshop.com/documentation/publish/submitting-an-add-on/). Upload the source files themselves; AMO signs the add-on package. Do not commit signing credentials, API keys, or signed packages to this repository.
+If you want a public listing on AMO instead, use **On this site** and remove the `update_url` property from `browser_specific_settings.gecko` before packaging. Mozilla-hosted add-ons receive updates through AMO and cannot declare their own `update_url`. Choose one distribution channel per submitted package. See Mozilla's [signing and distribution guide](https://extensionworkshop.com/documentation/publish/signing-and-distribution-overview/) and [submission guide](https://extensionworkshop.com/documentation/publish/submitting-an-add-on/). Upload the source files themselves; AMO signs the add-on package. Do not commit signing credentials, API keys, or signed packages to this repository.
 
 ## Privacy
 
