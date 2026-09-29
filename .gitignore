@@ -1,0 +1,17 @@
+# Local editor and operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+
+# Dependencies and generated packages
+node_modules/
+web-ext-artifacts/
+*.xpi
+*.zip
+
+# Local secrets
+.env
+.env.*
+!.env.example
