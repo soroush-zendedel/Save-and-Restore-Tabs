@@ -14,6 +14,26 @@ A small Firefox extension for exporting open web tab URLs to a plain-text file a
 - Firefox 140 or later on desktop, or a compatible Firefox for Android version.
 - The `tabs` permission, used only to read tab URLs and create tabs at the user's request.
 
+## Source build for AMO review
+
+The extension source files are plain, readable HTML, CSS, JavaScript, and JSON. They are not minified, bundled, transpiled, or generated, and the project has no third-party dependencies. The build script copies the exact runtime files into `dist/firefox-extension` without modifying them.
+
+### Build environment
+
+- Operating system: Windows 10/11, macOS 13 or later, or a current Linux distribution.
+- Node.js 24.x (the build was checked with 24.19.0). Install Node.js from the [official download archive](https://nodejs.org/en/download/archive/). The standard installer also installs npm, but this project does not use npm to build and has no package dependencies or lockfile.
+- No other build tools or programs are required.
+
+### Reproduce the extension files
+
+From the repository root, run:
+
+```sh
+node scripts/build.mjs
+```
+
+The script creates `dist/firefox-extension` containing exactly the seven runtime files listed in `scripts/build.mjs`. These files are byte-for-byte copies of the root extension files; no transformation is applied. Compare the generated directory with the extension files in the submitted add-on package. To submit source to AMO, upload the repository source archive containing this README, `scripts/build.mjs`, and the original source files; do not upload the generated `dist` directory as the only source archive.
+
 ## Install from source
 
 1. Download or clone this repository.

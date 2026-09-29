@@ -8,6 +8,7 @@ Desktop.ini
 # Dependencies and generated packages
 node_modules/
 web-ext-artifacts/
+dist/
 *.xpi
 *.zip
 
