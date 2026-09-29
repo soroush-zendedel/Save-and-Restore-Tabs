@@ -35,6 +35,12 @@ Firefox release builds require Mozilla-signed add-ons. To create an unlisted sig
 3. Choose **Distribution by me** (unlisted) when asked about distribution. Review the validation results and complete the submission.
 4. Download the signed `.xpi` from the Developer Hub. Install it through `about:addons` → gear menu → **Install Add-on From File…**.
 
+### Automatic updates for self-distributed installs
+
+This repository provides an update manifest at [`updates.json`](updates.json), and `manifest.json` points Firefox to its raw GitHub URL. For each release, submit the new version to AMO using the self-distribution channel, download the Mozilla-signed XPI, and attach it to a GitHub Release using the exact filename and versioned URL recorded in `updates.json` (for example, `save-and-restore-tabs-1.0.0.xpi` for `v1.0.0`). Update the version and download link in `updates.json` for every subsequent release. Publish the GitHub release asset before publishing the update manifest change so Firefox never sees a link to a missing package. The repository must remain publicly accessible at the configured GitHub URL for update checks to work.
+
+The update manifest and its download URL are part of the installed add-on's update mechanism. If the repository or release URL changes, update the manifest and keep the existing update-manifest URL available for already-installed copies.
+
 For a public listing, select the public distribution option and complete the AMO listing and review requirements. See Mozilla's [signing and distribution guide](https://extensionworkshop.com/documentation/publish/signing-and-distribution-overview/) and [submission guide](https://extensionworkshop.com/documentation/publish/submitting-an-add-on/). Upload the source files themselves; AMO signs the add-on package. Do not commit signing credentials, API keys, or signed packages to this repository.
 
 ## Privacy

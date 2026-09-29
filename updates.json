@@ -1,0 +1,12 @@
+{
+  "addons": {
+    "save-and-restore-tabs@soroush-zendedel.github.io": {
+      "updates": [
+        {
+          "version": "1.0.0",
+          "update_link": "https://github.com/soroush-zendedel/Save-and-Restore-Tabs/releases/download/v1.0.0/save-and-restore-tabs-1.0.0.xpi"
+        }
+      ]
+    }
+  }
+}
