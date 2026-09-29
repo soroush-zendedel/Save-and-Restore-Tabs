@@ -11,7 +11,7 @@ A small Firefox extension for exporting open web tab URLs to a plain-text file a
 
 ## Requirements
 
-- Firefox 140 or later.
+- Firefox 140 or later on desktop, or a compatible Firefox for Android version.
 - The `tabs` permission, used only to read tab URLs and create tabs at the user's request.
 
 ## Install from source
@@ -42,6 +42,10 @@ This repository provides an update manifest at [`updates.json`](updates.json), a
 The update manifest and its download URL are part of the installed add-on's update mechanism. If the repository or release URL changes, update the manifest and keep the existing update-manifest URL available for already-installed copies.
 
 If you want a public listing on AMO instead, use **On this site** and remove the `update_url` property from `browser_specific_settings.gecko` before packaging. Mozilla-hosted add-ons receive updates through AMO and cannot declare their own `update_url`. Choose one distribution channel per submitted package. See Mozilla's [signing and distribution guide](https://extensionworkshop.com/documentation/publish/signing-and-distribution-overview/) and [submission guide](https://extensionworkshop.com/documentation/publish/submitting-an-add-on/). Upload the source files themselves; AMO signs the add-on package. Do not commit signing credentials, API keys, or signed packages to this repository.
+
+### Reviewer checklist
+
+For version notes, summarize the release features (for the first version: export open HTTP/HTTPS tab URLs to a text file and restore valid HTTP/HTTPS URLs from a text file). No test account is needed: the extension has no website account or external service dependency. The extension declares Firefox for Android compatibility in the manifest; confirm Android behavior on a supported Firefox for Android device before claiming it has been device-tested.
 
 ## Privacy
 

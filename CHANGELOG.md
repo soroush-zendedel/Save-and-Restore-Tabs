@@ -9,3 +9,4 @@ Notable changes to this project are recorded here.
 - Restore HTTP and HTTPS URLs from a plain-text file.
 - Prepare Manifest V3 metadata for Firefox Add-ons signing.
 - Configure self-hosted update metadata for GitHub Releases.
+- Declare Firefox for Android compatibility.
